@@ -42,7 +42,8 @@ h1 {
 
 @media(min-width:768px){
   .tres-columnas{
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
   }
 }
