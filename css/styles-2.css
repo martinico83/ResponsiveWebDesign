@@ -41,9 +41,34 @@ h1 {
 /** CODIGO AQUI **/
 
 @media(min-width:768px){
-  .tres-columnas{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2rem;
+
+  /* Metodo Viejo 1 */
+  /*.dos-columnas{
+    display: flex;
+    justify-content: space-between;
   }
+
+  .entrada-blog{
+    flex-basis: calc(50% - 1rem);
+  }*/
+
+  /* Metodo Viejo 2 */
+/*.dos-columnas{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .entrada-blog{
+    flex: 0 0 calc(50% - 1rem);
+  }*/
+
+  /* Metodo Nuevo */
+
+  .dos-columnas{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  
 }
