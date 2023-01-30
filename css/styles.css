@@ -51,20 +51,44 @@ p {
 /** CODIGO AQUI **/
 
 @media(min-width:768px){
-  .con-sidebar{
-        display: flex;
-  /*  */ gap: 2rem;
-   }
 
-  aside{
-   flex: 1;  /* Cada un pixel que le doy a aside 3 son los que toma article */
-   /*  flex: 0 0 calc(33.3% - 1rem); */
+  .layout-shifter{
+    display: grid;
+    grid-template-areas: "contenido"
+                          "inferior";
   }
 
-  article{
-   flex: 3;  /* Cada  tres pixel que le doy a article 1 son los que toma aside */
-   /*      flex: 0 0 calc(66.6% - 1rem); */
+  .sidebar{
+    grid-area: inferior;
+  }
 
+  .contenido-principal{
+    grid-area: contenido;
+    display: grid;
+    grid-template-areas: "entrada1 entrada2";
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+  }
+  
+}
+
+@media(min-width:992px){
+
+  .layout-shifter{
+    grid-template-areas: "contenido sidebar";
+    column-gap: 2rem;
+  }
+
+    .sidebar{
+    grid-area: sidebar;
+  }
+  
+   .contenido-principal{
+    grid-area: contenido;
+
+     grid-template-areas: "entrada1"
+                          "entrada2";
+     grid-template-columns: unset;
   }
   
 }
